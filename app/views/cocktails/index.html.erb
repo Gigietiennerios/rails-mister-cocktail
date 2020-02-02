@@ -2,7 +2,8 @@
 
 <%= cl_image_tag "gk7h7cwnelxlmwqisqci" %>
 <% @cocktails.each do |cocktail| %>
-  <h2><%= cocktail.name %></h2>
+    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    <%= link_to "🗑️", cocktail_path(cocktail), method: :delete %>
 <% end %>
 
 <%= link_to 'Create new cocktail', new_cocktail_path %>
